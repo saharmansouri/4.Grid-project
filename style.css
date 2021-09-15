@@ -1,0 +1,95 @@
+@font-face {
+    font-family:adobe;
+    src: url("fonts/6328168736/AdobeCleanSerifMedium.woff") format("woff");
+    font-weight:normal;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template:33fr 33fr 33fr/ 20fr 40fr 40fr;    background-color: antiquewhite;
+    grid-template-areas: "sidebar header header"
+                         "sidebar gallery gallery"
+                         "sidebar gallery gallery";
+    font-family: adobe;
+    background-color: #eff4f8;
+}
+.sidebar{
+    grid-area: sidebar;
+    padding: 29px;
+}
+.header{
+    background-color: #f7f8f9;
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+.main-word{
+    text-align: center;
+    font-size: 29px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.gallery{
+    background-color: gray;
+    grid-area: gallery;
+    display: grid;
+    grid-template: 50fr 50fr/ 50fr 50fr;
+    grid-gap: 3px;
+}
+.icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+.icons{
+    background-color: #e2e9ef;
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 12px;
+}
+h4{
+    color: #a3a8ac;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media (max-width: 360px) {
+    .container {
+        grid-template: 10fr 30fr 20fr 20fr 20fr /100fr;
+        grid-template-areas: "sidebar"
+                             "header"
+                             "gallery";
+    }
+
+    .text {
+        display: none;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template: 25fr 25fr 25fr 25fr/100fr;
+    }
+    h2{
+        color: #41576D;
+    }
+.sidebar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+}
+@media (min-width: 400px) {
+    .menu-item{
+        display: none;
+    }
+}
